@@ -1,0 +1,7 @@
+* Install
+You can use my configuration:
+  git clone --depth=1 https://github.com/llNoahll/.SpaceVim.d ~/.SpaceVim.d
+
+And you can use spac-vim-dark theme.
+
+Happy Hacking!  <(~︶~)> 
