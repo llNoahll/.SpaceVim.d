@@ -28,6 +28,10 @@ func! init#after() abort
     inoremap <C-d> <DELETE>
     iunmap jk
 
+    " set basic configs.
+    set guifont=Ubuntu\ Mono:h18
+    set guioptions+=m  "remove menu bar
+
     " set the Tab
     set tabstop=4
     set softtabstop=4
