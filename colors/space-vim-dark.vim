@@ -16,7 +16,14 @@ if v:version > 580
     endif
 endif
 
-let g:colors_name='space-vim-dark'
+if !(has('termguicolors') && &termguicolors) && !has('gui_running') && &t_Co != 256
+  " prevent change statuslines
+  finish
+else
+  let g:colors_name='space-vim-dark'
+endif
+
+let s:is_dark=(&background ==# 'dark')
 
 " refer to http://www.calmar.ws/vim/256-xterm-24bit-rgb-color-chart.html
 let s:color256 = {
@@ -414,4 +421,6 @@ unlet s:color256 s:colors s:bg
 
 " Must be at the end, because of ctermbg=234 bug.
 " https://groups.google.com/forum/#!msg/vim_dev/afPqwAFNdrU/nqh6tOM87QUJ
-set background=dark
+if s:is_dark
+  set background=dark
+endif
